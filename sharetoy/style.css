@@ -18,6 +18,9 @@
   
     /* Ajustar o padding para evitar ultrapassar */
     .container {
+      max-width: 100%;
+      height: auto; /* Ajusta a altura proporcional à largura */
+      overflow-x: hidden; /* Evita conteúdo transbordando horizontalmente */
       padding: 1rem;
     }
   
@@ -27,8 +30,11 @@
     }
   
     p.description {
-      font-size: 1.6rem; /* Diminuir o tamanho do texto da descrição */
-      word-wrap: break-word; /* Forçar quebra de linha quando necessário */
+      font-size: 1.6rem; /* Reduzir o tamanho no mobile */
+      word-wrap: break-word; /* Quebrar a linha quando necessário */
+      text-align: center; /* Centraliza o texto */
+      padding: 0 1rem; /* Adicionar padding para evitar que o texto encoste nas laterais */
+
     }
   }
   
