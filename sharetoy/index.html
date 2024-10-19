@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShareToy</title>
+    <link rel="icon" href="logo24sharetoy.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--fonte da letra-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+
+    <header>
+      <div class="logo-container">
+          <img src="nerd.svg" alt="Logotipo 1" class="logo">
+          <img src="gbu.svg" alt="Logotipo 2" class="logo">
+          <img src="ieee.svg" alt="Logotipo 3" class="logo">
+      </div>
+  </header>
+
+  <section id="background-section" class="relative">
+    <div class="overlay">
+        <div class="container">
+            <h1 class="title">ShareToy</h1>
+            <p class="description">Vamos trazer mais felicidade ao Natal dos que mais precisam!</p>
+            <img src="/sharetoy/logo24sharetoy.svg" alt="Logo" class="large-logo"> <!-- Adicionei a classe large-logo aqui -->
+        </div>
+
+        <img src="/sharetoy/ronaldo.png" alt="Logo" class="large-logo2"> <!-- Adicionei a classe large-logo aqui -->
+    </div>
+</section>
+
+    <div class="wrapper">
+      <p></p>
+      <h1></h1>
+
+      <div class="faq">
+        <button class="accordion">
+          Quem somos?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            O ShareToy é uma iniciativa solidária que visa trazer sorrisos ao Natal de muitas crianças. Este evento consiste na recolha de brinquedos por todo o território de Portugal, com especial foco na cidade de Aveiro. Os brinquedos são generosamente doados por pessoas de diferentes localidades e depois reunidos em pontos de recolha estratégicos, como na Universidade de Aveiro, incluindo a Biblioteca e o DETI.
+           Após a recolha, os brinquedos passam por um processo de limpeza e reparação, realizado por alunos voluntários da própria Universidade de Aveiro. O objetivo é garantir que cada brinquedo receba uma nova vida e esteja pronto para fazer o dia de uma criança mais feliz.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          Como ajudar?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+           Se queres ajudar nesta causa podes recolher e entregar brinquedos nos nossos pontos de recolha. Se por algum motivo achares que precisas de nos contactar, podes fazê-lo pela nossa página Instagram (@nerd.aettua) ou então pelo nosso email (deti-aettua-nerd@ua.pt).
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          Quando começou?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            O ShareToy teve origem numa iniciativa que começou a partir da união de esforços de dois núcleos da Universidade de Aveiro, motivados pela crescente necessidade de apoiar crianças em situações de vulnerabilidade social, especialmente aquelas que vivem em centros de acolhimento ou que provêm de famílias carenciadas. Os membros destes núcleos perceberam que algo mais poderia ser feito para transformar o Natal dessas crianças.
+
+Ao observar as dificuldades e a falta de acesso a brinquedos, teve-se a visão de criar um projeto solidário que não só proporcionasse alegria e esperança durante a época natalícia, mas que também envolvesse a comunidade estudantil e local. Assim nasceu o ShareToy, com o objetivo claro de recolher, reparar e redistribuir brinquedos, trazendo sorrisos e calor aos corações de muitas crianças que não teriam a oportunidade de desfrutar dessa felicidade.
+          </p>
+        </div>
+      </div>
+
+      
+
+    <script>
+      const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach(accordion => {
+  accordion.addEventListener("click", function() {
+    // Alterna a classe "active" para o botão clicado
+    this.classList.toggle("active");
+
+    // Alterna o painel associado ao botão
+    const panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
+    </script>
+  </body>
+</html>
