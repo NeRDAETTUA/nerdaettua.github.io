@@ -50,7 +50,7 @@
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
-  background-color: #e03136;
+  background-color: #a10d12;
   line-height: 1.6;
 }
 
@@ -117,7 +117,7 @@ header {
   max-width: 60rem;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #e03136;
+  background-color: #a10d12;
 }
 
 /* Accordion */
