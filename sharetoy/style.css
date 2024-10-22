@@ -60,30 +60,33 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; /* Alterado para min-height */
+  min-height: 90vh; /* Ajustar para uma altura menor */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding-top: 3rem; /* Adiciona um padding-top para afastar do header */
+  padding-top: 1rem; /* Reduzir padding superior */
+  padding-bottom: 1rem; /* Adicionar padding inferior para centralizar */
 }
 
 /* Container centralizado */
 .container {
   text-align: center;
   color: white;
+  padding: 0 1rem; /* Ajuste de padding nas laterais para evitar que o texto encoste nas bordas */
 }
 
 /* Título e descrição */
 h1.title {
-  font-size: 3rem; /* Usa rem para escalar com base no tamanho definido no html */
-  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Ajustar tamanho do título */
+  margin-bottom: 1rem; /* Reduzir espaço abaixo do título */
 }
 
 p.description {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  margin-bottom: 1.5rem; /* Ajustar margem inferior */
 }
 
 /* Header */
@@ -109,7 +112,10 @@ header {
 }
 
 .large-logo2 {
-  width: 50rem;
+  width: 40rem; /* Ajustar o tamanho da imagem */
+  max-width: 80%; /* Certificar-se que não ultrapassa o container */
+  margin: 0 auto; /* Centralizar */
+  padding: 1rem 0; /* Reduzir o padding para ajustar o espaço */
 }
 
 /* Wrapper */
