@@ -73,8 +73,12 @@ body {
 /* Container centralizado */
 .container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 0 1rem; /* Ajuste de padding nas laterais para evitar que o texto encoste nas bordas */
+  padding: 0 1rem;
 }
 
 /* Título e descrição */
@@ -112,10 +116,11 @@ header {
 }
 
 .large-logo2 {
-  width: 40rem; /* Ajustar o tamanho da imagem */
-  max-width: 80%; /* Certificar-se que não ultrapassa o container */
-  margin: 0 auto; /* Centralizar */
-  padding: 1rem 0; /* Reduzir o padding para ajustar o espaço */
+  width: 40rem; /* Ajuste de tamanho da imagem */
+  max-width: 100%; /* Responsivo para garantir que não ultrapasse o container */
+  margin: 0 auto; /* Centralizar horizontalmente */
+  display: block; /* Tratar a imagem como bloco */
+  padding-top: 1rem; /* Ajustar padding superior se necessário */
 }
 
 /* Wrapper */
