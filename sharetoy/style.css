@@ -140,7 +140,7 @@ header {
   width: 100%;
   text-align: left;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: background-color 0.4s ease;
   margin-bottom: 1rem;
   border-radius: 0.8rem;
@@ -159,6 +159,8 @@ header {
   margin-top: 1rem;
   border-radius: 0.8rem;
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;
+  font: bold;
 }
 
 /* Texto do painel */
