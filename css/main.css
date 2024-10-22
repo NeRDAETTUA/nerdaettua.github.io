@@ -1551,3 +1551,16 @@ video {
 
 
 }
+
+
+
+
+
+
+#saving-money2 {
+  background-image: url('/img/sharetoynerd.jpg'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área da seção */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  padding: 50px 0; /* Adiciona algum espaço interno */
+}
