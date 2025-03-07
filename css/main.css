@@ -513,7 +513,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-#home {
+#home,#merch {
   
   background-image: url('../img/home.jpg'); /* Caminho da imagem */
   background-size: cover; /* Faz com que a imagem cubra toda a seção */
