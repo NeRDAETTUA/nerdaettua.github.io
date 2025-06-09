@@ -422,7 +422,6 @@
 } .u-section-3 {
   background-image: url("images/blur_deti.png");
   background-size: cover;
-  background-position: 50% 50%;
 }
 
 .u-section-3 .u-sheet-1 {
@@ -445,6 +444,10 @@
 }
 
 @media (max-width: 1199px) {
+   .u-section-3 {
+    background-position: 50% 50%;
+  }
+
   .u-section-3 .u-social-icons-1 {
     min-height: 16px;
   }

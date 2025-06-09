@@ -46586,6 +46586,10 @@ a.u-link.u-text-hover-color-var:hover {
   letter-spacing: normal;
 }
 
+.u-header .u-sidenav-1 {
+  --opacity: 0.5;
+}
+
 .u-header .u-nav-2 {
   font-size: 1.25rem;
 }
