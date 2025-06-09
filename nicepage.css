@@ -46599,7 +46599,7 @@ a.u-link.u-text-hover-color-var:hover {
 
 @media (max-width: 575px) {
   .u-header .u-sheet-1 {
-    min-height: 67px;
+    min-height: 68px;
   }
 
   .u-header .u-image-1 {
@@ -46609,8 +46609,13 @@ a.u-link.u-text-hover-color-var:hover {
   }
 
   .u-header .u-menu-1 {
-    margin-top: -41px;
-    margin-bottom: 18px;
+    margin-top: -40px;
+    margin-right: -5px;
+    margin-bottom: 17px;
+  }
+
+  .u-header .u-nav-2 {
+    margin: 20px auto 0;
   }
 }
  .u-footer {

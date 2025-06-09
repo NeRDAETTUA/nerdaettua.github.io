@@ -474,12 +474,12 @@
   font-weight: 700;
   font-family: Roboto, sans-serif;
   font-size: 3.4375rem;
-  margin: 0;
+  margin: 0 auto 0 0;
 }
 
 .u-section-4 .u-text-2 {
   font-size: 1.25rem;
-  margin: 30px 24px 0 0;
+  margin: 30px auto 0 0;
 }
 
 .u-section-4 .u-btn-1 {
@@ -508,11 +508,6 @@
   .u-section-4 .u-text-1 {
     line-height: 52.8px;
     font-family: Barlow;
-  }
-
-  .u-section-4 .u-text-2 {
-    width: auto;
-    margin-right: 63px;
   }
 
   .u-section-4 .u-btn-1 {
@@ -548,12 +543,12 @@
   }
 
   .u-section-4 .u-text-1 {
-    width: auto;
     font-family: Roboto, sans-serif;
+    margin-left: auto;
   }
 
   .u-section-4 .u-text-2 {
-    margin-right: 0;
+    margin-left: auto;
   }
 
   .u-section-4 .u-btn-1 {
@@ -610,15 +605,20 @@
 
   .u-section-4 .u-text-1 {
     font-size: 2.25rem;
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .u-section-4 .u-text-2 {
-    margin-top: 11px;
+    width: auto;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .u-section-4 .u-btn-1 {
-    margin-top: 0;
-    margin-left: 35px;
+    margin-top: 11px;
   }
 }
 
