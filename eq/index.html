@@ -1,0 +1,1162 @@
+<!doctype html>
+<html
+  lang="pt-pt"
+  data-ws-project="94038a03-ac54-4182-9032-d1978f54377b"
+  data-ws-last-published="2025-08-19T11:50:09.132Z"
+>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/static/app_generated_index-6937cd5a.CroCJFHc.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="/assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 16w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 32w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 48w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 64w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 96w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 128w, /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 256w"
+      imagesizes="100vw"
+    />
+    <meta property="og:url" content="https://url/eq" />
+    <title>Equipa</title>
+    <meta property="og:title" content="Equipa" />
+    <meta name="description" content="Os membros da direção do núcleo" />
+    <meta property="og:description" content="Os membros da direção do núcleo" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png" />
+    <link
+      rel="preload"
+      href="/assets/SpaceGrotesk-VariableFont_wght_92Z2i9spNtfwrzeGeXHcE.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/InterVariable_qDqxtwB6S7W69tcm-FSxu.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/deti_compressed_s4URwBUyuGW8t-NA5TwTK.png"
+      as="image"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer="">
+
+      <!-- Anime.js v4 -->
+      <script src="https://cdn.jsdelivr.net/npm/animejs@4.0.0/lib/anime.iife.min.js">
+    </script>
+
+    <style>
+      .hover-opacity {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .hover-opacity:hover {
+        opacity: 0.65;
+      }
+    </style>
+  </head>
+  <body class="w-element">
+    <div style="display: contents">
+      <div style="display: contents">
+        <div class="w-html-embed">
+          <style>
+            /* Remove margin from all paragraphs so we don't need to use a Token on every one. */
+            p {
+              margin: 0;
+            }
+
+            /* Make links scroll to their sections smoothly. */
+            * {
+              scroll-behavior: smooth;
+            }
+
+            /* Show parent dropdown link hover styles when dropdown is active. */
+            button[data-state="open"].nav-dropdown-parent {
+              --navigation-menu-trigger-icon-transform: 180deg;
+              color: var(--foreground-accent);
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="w-html-embed">
+      <!-- Splitting.js (divide texto em palavras) -->
+      <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+      <style>
+        /* Ajustes visuais e performance */
+        #animated-text {
+          overflow: visible; /* permite que as transformações não cortem */
+          line-height: 1.2;
+        }
+
+        /* Cada palavra fica inline-block para podermos medir e aplicar filtros */
+        #animated-text .word {
+          display: inline-block;
+          white-space: pre; /* preserva espaçamento */
+          will-change: filter, transform;
+          transition:
+            filter 140ms linear,
+            transform 140ms linear;
+          pointer-events: none; /* evita que cada span capture o mouse isoladamente */
+        }
+      </style>
+
+      <!-- Splitting.js (divide texto em letras) -->
+      <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+      <style>
+        /* Ajustes visuais e performance */
+        #animated-text {
+          overflow: visible; /* permite que as transformações não cortem */
+          line-height: 1.2;
+        }
+
+        /* Cada letra fica inline-block para podermos medir e aplicar filtros */
+        #animated-text .char {
+          display: inline-block;
+          white-space: pre; /* preserva espaçamento */
+          will-change: filter, transform;
+          transition:
+            filter 140ms linear,
+            transform 140ms linear;
+          pointer-events: none; /* evita que cada span capture o mouse isoladamente */
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const target = document.getElementById("animated-text");
+          if (!target) {
+            console.warn("Elemento #animated-text não encontrado.");
+            return;
+          }
+
+          // 1) Divide o texto em letras (chars)
+          Splitting({ target: target, by: "chars" });
+
+          // 2) Seleciona as letras (Splitting cria elementos com a classe .char)
+          const chars = Array.from(target.querySelectorAll(".char"));
+          if (!chars.length) {
+            console.warn("Nenhuma letra encontrada pelo Splitting.");
+            return;
+          }
+
+          // Parâmetros que podes ajustar
+          const maxBlur = 6; // blur máximo em px
+          const maxDist = 160; // distância (px) onde o efeito chega a 0
+
+          // throttle via rAF
+          let rafId = null;
+          let lastEvent = null;
+
+          function onMove(e) {
+            lastEvent = e;
+            if (!rafId) rafId = requestAnimationFrame(update);
+          }
+
+          function update() {
+            rafId = null;
+            const e = lastEvent;
+            if (!e) return;
+
+            const rect = target.getBoundingClientRect();
+            const mouseX = e.clientX; // coordenada absoluta na viewport
+
+            // Atualiza cada letra com base na distância ao cursor
+            chars.forEach((char) => {
+              const cr = char.getBoundingClientRect();
+              const centerX = cr.left + cr.width / 2;
+
+              const distance = Math.abs(mouseX - centerX);
+
+              // Cálculo do blur: mais próximo -> maior blur
+              const t = Math.min(distance / maxDist, 1); // 0 (muito perto) .. 1 (longe)
+              const blur = maxBlur * (1 - t); // 0..maxBlur (perto = maior blur)
+              char.style.filter = `blur(${blur}px)`;
+
+              // pequeno efeito extra: escala ligeira para destacar
+              const scale = 1 - (blur / maxBlur) * 0.03; // varia entre 0.97 e 1
+              char.style.transform = `scale(${scale})`;
+            });
+          }
+
+          // Limpar blur ao sair
+          function onLeave() {
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+            lastEvent = null;
+            chars.forEach((c) => {
+              c.style.filter = "blur(0px)";
+              c.style.transform = "scale(1)";
+            });
+          }
+
+          // Eventos
+          target.addEventListener("mousemove", onMove);
+          target.addEventListener("mouseleave", onLeave);
+          window.addEventListener("resize", onLeave);
+        });
+      </script>
+    </div>
+    <nav id="a" class="w-box w-header-52">
+      <div class="w-element w-element-23">
+        <div class="w-box w-main-3">
+          <div style="display: contents">
+            <div style="display: contents">
+              <a href="/" target="_top" class="w-link"
+                ><img
+                  alt="Logo"
+                  width="100"
+                  height="32"
+                  src="/assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png"
+                  class="w-image"
+                  sizes="100vw"
+                  srcset="
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png  16w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png  32w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png  48w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png  64w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png  96w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 128w,
+                    /assets/NeRD_P_JQ8TMM8s7huiSC8pLRbDn.png 256w
+                  "
+                  decoding="async"
+                  loading="eager"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="w-box w-cta-2">
+          <div style="display: contents">
+            <div style="display: contents">
+              <div class="w-box w-tab-menu">
+                <a
+                  tab-item="true"
+                  href="/"
+                  target="_top"
+                  class="w-link w-inicio-2"
+                  ><div class="w-text w-label">Inicio</div></a
+                ><a
+                  tab-item="true"
+                  href="/atv"
+                  target="_top"
+                  class="w-link w-atividades"
+                  ><div class="w-text w-label-1">Atividades</div></a
+                ><a
+                  tab-item="true"
+                  href="/eq"
+                  target="_top"
+                  class="w-link w-equipa"
+                  ><div class="w-text w-label-2">Equipa</div></a
+                ><a
+                  tab-item="true"
+                  href="/c"
+                  target="_top"
+                  class="w-link w-contatos"
+                  ><div class="w-text w-label-3">Contatos</div></a
+                >
+                <div tab-underline="true" class="w-box w-underline"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: contents">
+          <div style="display: contents">
+            <button
+              type="button"
+              aria-label="Open mobile menu"
+              class="w-button w-button-3"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="radix-:R3e:"
+              data-state="closed"
+            >
+              <div class="w-html-embed">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 22 22"
+                  fill="currentColor"
+                  width="100%"
+                  height="100%"
+                  style="display: block"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5.998a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Zm0 5.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Zm0 5.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="w-element w-texto-inicial-2 animated-bg cursor-zone">
+      <div class="w-element w-texto-3">
+        <h1 id="animated-text" class="w-element w-element-18">Equipa</h1>
+      </div>
+      <a class="w-link w-link-49 hover-opacity" href="#"
+        ><span class="w-text w-text-20">Descobre mais </span>
+        <div class="w-box w-icon-31">
+          <div class="w-html-embed w-icon-32">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div></div
+      ></a>
+      <div class="w-html-embed">
+        <style>
+          .hover-opacity {
+            opacity: 1;
+            cursor: pointer;
+          }
+
+          .hover-opacity:hover {
+            opacity: 0.65;
+          }
+        </style>
+      </div>
+    </div>
+    <div class="w-html-embed">
+      <style>
+        .sobre-nos {
+          max-width: 700px;
+          margin: 40px auto;
+          padding: 30px;
+          background: #ffffff;
+          border-radius: 16px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+          font-family: "Segoe UI", Roboto, Arial, sans-serif;
+          color: #333;
+          line-height: 1.7;
+        }
+
+        .sobre-nos h2 {
+          font-size: 26px;
+          font-weight: 700;
+          margin-bottom: 18px;
+          color: #111;
+          position: relative;
+        }
+
+        .sobre-nos h2::before {
+          content: "“";
+          font-size: 36px;
+          color: #3b82f6;
+          position: absolute;
+          left: -20px;
+          top: -10px;
+        }
+
+        .sobre-nos h2::after {
+          content: "”";
+          font-size: 36px;
+          color: #3b82f6;
+          margin-left: 5px;
+        }
+
+        .sobre-nos p {
+          font-size: 16px;
+          margin-bottom: 16px;
+          text-align: justify;
+        }
+
+        .sobre-nos strong {
+          color: #3b82f6;
+        }
+
+        }
+      </style>
+
+      <div class="sobre-nos">
+        <h2>Mais do que um núcleo, somos uma família</h2>
+        <p>
+          O <strong>Núcleo de Robótica Diversificada</strong> é feito de pessoas
+          proativas, criativas e apaixonadas por tecnologia! Desenvolvemos
+          projetos nas áreas de Robótica, Programação, Design, Prototipagem,
+          Organizamos Eventos, Competições e muito mais.
+        </p>
+        <p>Adoramos desafios — e estamos sempre prontos para superá-los!</p>
+        <p>Desce para conhecer um pouco mais da nossa família.</p>
+      </div>
+    </div>
+    <div class="w-box w-page-wrapper">
+      <div class="w-box w-body-24">
+        <div dir="ltr" data-orientation="horizontal" class="w-tabs w-tabs-2">
+          <div
+            role="tablist"
+            aria-orientation="horizontal"
+            class="w-tabs-list w-tabs-list-2"
+            tabindex="-1"
+            data-orientation="horizontal"
+            style="outline: none"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="radix-:R1q:-content-0"
+              data-state="active"
+              id="radix-:R1q:-trigger-0"
+              data-ws-index="0"
+              class="w-tab-trigger w-tab-trigger-5"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+            >
+              <div class="w-box w-header-33">
+                <h3 class="w-heading w-heading-51">Direção 24/25</h3>
+              </div>
+            </button>
+          </div>
+          <div
+            data-state="active"
+            data-orientation="horizontal"
+            role="tabpanel"
+            aria-labelledby="radix-:R1q:-trigger-0"
+            id="radix-:R1q:-content-0"
+            tabindex="0"
+            data-ws-index="0"
+            class="w-tab-content w-tab-content-5"
+            style="animation-duration: 0s"
+          >
+            <section class="w-box w-section-testimonials">
+              <div class="w-box w-container-11">
+                <div class="w-box w-members">
+                  <div class="w-box w-member">
+                    <div class="w-box w-header-35">
+                      <img
+                        alt="Emily"
+                        width="917"
+                        height="917"
+                        src="/assets/user1_RQl7k1WihTfDlurHg2M8N.jpg"
+                        class="w-image w-image-22"
+                        sizes="100vw"
+                        srcset="
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg   16w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg   32w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg   48w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg   64w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg   96w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  128w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  256w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  384w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  640w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  750w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg  828w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg 1080w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg 1200w,
+                          /assets/user1_RQl7k1WihTfDlurHg2M8N.jpg 1920w
+                        "
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="w-box w-body-19">
+                      <h3 class="w-heading w-name-1">Gabriel Menezes</h3>
+                      <div class="w-text w-position">Cordenador</div>
+                    </div>
+                  </div>
+                  <div class="w-box w-member-1">
+                    <div class="w-box w-header-36">
+                      <img
+                        alt="Emily"
+                        width="864"
+                        height="864"
+                        src="/assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg"
+                        class="w-image w-image-23"
+                        sizes="100vw"
+                        srcset="
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg   16w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg   32w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg   48w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg   64w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg   96w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  128w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  256w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  384w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  640w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  750w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg  828w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg 1080w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg 1200w,
+                          /assets/user2_RDoHs8FusTjy3wZ3-Nxte.jpg 1920w
+                        "
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="w-box w-body-20">
+                      <h3 class="w-heading w-name-2">Filipe Santos</h3>
+                      <div class="w-text w-position-1">Vice-Coordenador</div>
+                    </div>
+                  </div>
+                  <div class="w-box w-member-2">
+                    <div class="w-box w-header-37">
+                      <img
+                        alt="Emily"
+                        width="864"
+                        height="864"
+                        src="/assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg"
+                        class="w-image w-image-24"
+                        sizes="100vw"
+                        srcset="
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg   16w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg   32w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg   48w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg   64w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg   96w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  128w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  256w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  384w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  640w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  750w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg  828w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg 1080w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg 1200w,
+                          /assets/user3_o8fVp0vv2RHhjgo8DzmPV.jpg 1920w
+                        "
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="w-box w-body-21">
+                      <h3 class="w-heading w-name-3">Bruno Falque</h3>
+                      <div class="w-text w-position-3">Gestor-Financeiro</div>
+                    </div>
+                  </div>
+                  <div class="w-box w-member-3">
+                    <div class="w-box w-header-38">
+                      <img
+                        alt="Emily"
+                        width="832"
+                        height="832"
+                        src="/assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg"
+                        class="w-image w-image-25"
+                        sizes="100vw"
+                        srcset="
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg   16w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg   32w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg   48w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg   64w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg   96w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  128w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  256w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  384w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  640w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  750w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg  828w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg 1080w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg 1200w,
+                          /assets/user4_-WekT_7iqUzBEgwQs1LYb.jpg 1920w
+                        "
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="w-box w-body-22">
+                      <h3 class="w-heading w-name-4">João Carvalho</h3>
+                      <div class="w-text w-position-4">Vogal</div>
+                    </div>
+                  </div>
+                  <div class="w-box w-member-5">
+                    <div class="w-box w-header-40">
+                      <img
+                        alt="Emily"
+                        width="927"
+                        height="927"
+                        src="/assets/user5_xbfYxPb4heHp5133CdcSS.jpg"
+                        class="w-image w-image-27"
+                        sizes="100vw"
+                        srcset="
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg   16w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg   32w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg   48w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg   64w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg   96w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  128w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  256w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  384w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  640w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  750w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg  828w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg 1080w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg 1200w,
+                          /assets/user5_xbfYxPb4heHp5133CdcSS.jpg 1920w
+                        "
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="w-box w-body-25">
+                      <h3 class="w-heading w-name-6">David Monteiro</h3>
+                      <div class="w-text w-position-2">Vogal</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            data-state="inactive"
+            data-orientation="horizontal"
+            role="tabpanel"
+            aria-labelledby="radix-:R1q:-trigger-1"
+            hidden=""
+            id="radix-:R1q:-content-1"
+            tabindex="0"
+            data-ws-index="1"
+            class="w-tab-content w-tab-content-6"
+          ></div>
+        </div>
+      </div>
+      <div
+        data-ani-progress="slide-up"
+        ata-ani-children="true"
+        style="display: contents"
+      >
+        <div style="display: contents">
+          <footer class="w-box w-footer .protecao">
+            <div class="w-box w-container">
+              <hr class="w-separator w-separator-2" />
+              <div class="w-box w-link-group">
+                <div class="w-box w-links-1">
+                  <a
+                    href="https://www.instagram.com/nerd.aettua"
+                    class="w-link w-link-35"
+                    ><div class="w-html-embed w-icon-24">
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 18 18"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M16.0784 4.08455C16.3013 4.6733 16.4177 5.29782 16.4268 5.92733C16.4732 6.71947 16.4734 6.97854 16.475 8.98365L16.4751 9.01165C16.4751 11.0432 16.4643 11.2968 16.4285 12.0968C16.416 12.7197 16.2988 13.3334 16.0801 13.9155C15.6901 14.92 14.8959 15.715 13.8905 16.105C13.3084 16.3237 12.6939 16.441 12.0727 16.4534C11.2786 16.5 11.0183 16.5 8.98766 16.5H8.98754C6.95682 16.5 6.70319 16.4892 5.90238 16.4534C5.27869 16.4335 4.66416 16.3054 4.08538 16.0792C3.07917 15.6901 2.28501 14.8951 1.895 13.8905C1.67629 13.3076 1.55904 12.6939 1.54657 12.0719C1.5 11.2769 1.5 11.0174 1.5 8.9867C1.5 6.95599 1.51081 6.70236 1.54657 5.90155C1.55821 5.28036 1.67629 4.66582 1.895 4.08455C2.28418 3.07917 3.07917 2.28418 4.08455 1.895C4.66582 1.67629 5.28036 1.55904 5.90155 1.54574C6.6957 1.5 6.95599 1.5 8.9867 1.5C11.0174 1.5 11.2711 1.50998 12.071 1.54574C12.693 1.55904 13.3076 1.67629 13.8889 1.895C14.8942 2.28418 15.6884 3.07917 16.0784 4.08455ZM5.13733 8.98255C5.13733 11.1064 6.85786 12.8269 8.98171 12.8269C11.1039 12.8269 12.8261 11.1064 12.8261 8.98255C12.8261 6.85869 11.1039 5.13816 8.98171 5.13816C6.85786 5.13816 5.13733 6.85869 5.13733 8.98255ZM12.0827 4.99596C12.0827 5.49158 12.4827 5.8924 12.9791 5.8924C13.4739 5.8924 13.8747 5.49158 13.8747 4.99596C13.8747 4.50034 13.4739 4.09951 12.9791 4.09951C12.4827 4.09951 12.0827 4.50034 12.0827 4.99596ZM11.4789 8.98251C11.4789 10.3617 10.3608 11.4797 8.98167 11.4797C7.60248 11.4797 6.48444 10.3617 6.48444 8.98251C6.48444 7.60332 7.60248 6.48528 8.98167 6.48528C10.3608 6.48528 11.4789 7.60332 11.4789 8.98251Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span class="w-text">Instagram</span></a
+                  ><a
+                    href="https://www.instagram.com/nerd.aettua"
+                    class="w-link w-link-36"
+                    ><div class="w-html-embed w-icon-25">
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 18 18"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M14 1.5C14.663 1.5 15.2989 1.76339 15.7678 2.23223C16.2366 2.70107 16.5 3.33696 16.5 4V14C16.5 14.663 16.2366 15.2989 15.7678 15.7678C15.2989 16.2366 14.663 16.5 14 16.5H4C3.33696 16.5 2.70107 16.2366 2.23223 15.7678C1.76339 15.2989 1.5 14.663 1.5 14V4C1.5 3.33696 1.76339 2.70107 2.23223 2.23223C2.70107 1.76339 3.33696 1.5 4 1.5H14ZM5.66667 7.33333C5.44565 7.33333 5.23369 7.42113 5.07741 7.57741C4.92113 7.73369 4.83333 7.94565 4.83333 8.16667V12.3333C4.83333 12.5543 4.92113 12.7663 5.07741 12.9226C5.23369 13.0789 5.44565 13.1667 5.66667 13.1667C5.88768 13.1667 6.09964 13.0789 6.25592 12.9226C6.4122 12.7663 6.5 12.5543 6.5 12.3333V8.16667C6.5 7.94565 6.4122 7.73369 6.25592 7.57741C6.09964 7.42113 5.88768 7.33333 5.66667 7.33333ZM8.16667 6.5C7.94565 6.5 7.73369 6.5878 7.57741 6.74408C7.42113 6.90036 7.33333 7.11232 7.33333 7.33333V12.3333C7.33333 12.5543 7.42113 12.7663 7.57741 12.9226C7.73369 13.0789 7.94565 13.1667 8.16667 13.1667C8.38768 13.1667 8.59964 13.0789 8.75592 12.9226C8.9122 12.7663 9 12.5543 9 12.3333V9.28333C9.32511 8.92969 9.7205 8.64784 10.1608 8.45583C10.4383 8.3375 10.8558 8.28917 11.1458 8.38083C11.242 8.40524 11.3277 8.46022 11.39 8.5375C11.4333 8.59583 11.5 8.72583 11.5 9V12.3333C11.5 12.5543 11.5878 12.7663 11.7441 12.9226C11.9004 13.0789 12.1123 13.1667 12.3333 13.1667C12.5543 13.1667 12.7663 13.0789 12.9226 12.9226C13.0789 12.7663 13.1667 12.5543 13.1667 12.3333V9C13.1667 8.44167 13.025 7.945 12.73 7.54667C12.4585 7.18546 12.0786 6.9206 11.6458 6.79083C10.8942 6.555 10.0617 6.68583 9.50583 6.92417C9.32774 7.00039 9.15437 7.08721 8.98667 7.18417C8.95173 6.99216 8.85052 6.8185 8.70066 6.69347C8.55081 6.56844 8.36183 6.49997 8.16667 6.5ZM5.66667 4.83333C5.44565 4.83333 5.23369 4.92113 5.07741 5.07741C4.92113 5.23369 4.83333 5.44565 4.83333 5.66667C4.83333 5.88768 4.92113 6.09964 5.07741 6.25592C5.23369 6.4122 5.44565 6.5 5.66667 6.5C5.88768 6.5 6.09964 6.4122 6.25592 6.25592C6.4122 6.09964 6.5 5.88768 6.5 5.66667C6.5 5.44565 6.4122 5.23369 6.25592 5.07741C6.09964 4.92113 5.88768 4.83333 5.66667 4.83333Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span class="w-text">Linkedin</span></a
+                  >
+                </div>
+              </div>
+              <div class="w-box w-legal-area">
+                <div class="w-box"><div class="w-text">2025 © NeRD</div></div>
+              </div>
+            </div>
+          </footer>
+          <div style="display: contents">
+            <div style="display: contents">
+              <div class="w-html-embed">
+                <style>
+                  :root {
+                    --ani-duration: var(--duration-default, 0.2s);
+                    --ani-delay: 0s;
+                    --ani-slide-offset: 20%;
+                    --ani-zoom-in-scale: 1;
+                    --ani-zoom-out-scale: 0.85;
+                    --ani-flip-rotate: 30deg;
+                    --ani-easing: var(--easing-default, ease);
+                    --ani-fill-mode: forwards;
+                  }
+                  [data-ani]:not([data-ani-children]),
+                  [data-ani-children]:not([data-ani-progress]) > * {
+                    animation-duration: var(--ani-duration);
+                    animation-delay: var(--ani-delay);
+                    animation-timing-function: var(--ani-easing);
+                    animation-fill-mode: var(--ani-fill-mode);
+                    opacity: 0;
+                  }
+                  [data-ani-progress]:not([data-ani-children]),
+                  [data-ani-children]:not([data-ani]) > * {
+                    transition-property: opacity, transform;
+                    transition-duration: var(--ani-duration);
+                    transition-timing-function: var(--ani-easing);
+                    opacity: 0;
+                  }
+                  @keyframes fadeIn {
+                    from {
+                      opacity: 0;
+                    }
+                    to {
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes fadeOut {
+                    from {
+                      opacity: 1;
+                    }
+                    to {
+                      opacity: 0;
+                    }
+                  }
+                  [data-ani-children][data-ani="fade"] > .in,
+                  [data-ani="fade"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation-name: fadeIn;
+                  }
+                  [data-ani-children][data-ani="fade"] > .out,
+                  [data-ani="fade"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation-name: fadeOut;
+                  }
+                  @keyframes slideIn {
+                    from {
+                      opacity: 0;
+                      translate: var(--ani-slide-transform);
+                    }
+                    to {
+                      opacity: 1;
+                      translate: none;
+                    }
+                  }
+                  @keyframes slideOut {
+                    from {
+                      opacity: 1;
+                      translate: none;
+                    }
+                    to {
+                      opacity: 0;
+                      translate: var(--ani-slide-transform);
+                    }
+                  }
+                  [data-ani-children][data-ani|="slide"] > .in,
+                  [data-ani|="slide"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation-name: slideIn;
+                  }
+                  [data-ani-children][data-ani|="slide"] > .out,
+                  [data-ani|="slide"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation-name: slideOut;
+                  }
+                  [data-ani="slide-up"] {
+                    --ani-slide-transform: 0 var(--ani-slide-offset);
+                  }
+                  [data-ani="slide-down"] {
+                    --ani-slide-transform: 0 calc(-1 * var(--ani-slide-offset));
+                  }
+                  [data-ani="slide-left"] {
+                    --ani-slide-transform: var(--ani-slide-offset);
+                  }
+                  [data-ani="slide-right"] {
+                    --ani-slide-transform: calc(-1 * var(--ani-slide-offset));
+                  }
+                  @keyframes zoomIn {
+                    from {
+                      opacity: 0;
+                      scale: var(--ani-zoom-out-scale);
+                    }
+                    to {
+                      opacity: 1;
+                      scale: 1;
+                    }
+                  }
+                  @keyframes zoomOut {
+                    from {
+                      opacity: 1;
+                      scale: 1;
+                    }
+                    to {
+                      opacity: 0;
+                      scale: var(--ani-zoom-in-scale);
+                    }
+                  }
+                  [data-ani-children][data-ani="zoom"] > .in,
+                  [data-ani|="zoom"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation-name: zoomIn;
+                  }
+                  [data-ani-children][data-ani="zoom"] > .out,
+                  [data-ani|="zoom"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation-name: zoomOut;
+                  }
+                  [data-ani-children][data-ani-progress="zoom"] > *,
+                  [data-ani-progress="zoom"]:not([data-ani-children]) {
+                    transform: scale(var(--ani-zoom-out-scale));
+                  }
+                  @keyframes flipInY {
+                    from {
+                      rotate: y var(--ani-flip-rotate);
+                      perspective: 2000px;
+                      opacity: 0;
+                    }
+                    to {
+                      rotate: y 0;
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes flipOutY {
+                    from {
+                      rotate: y 0;
+                      opacity: 1;
+                    }
+                    to {
+                      perspective: 2000px;
+                      rotate: y var(--ani-flip-rotate);
+                      opacity: 0;
+                    }
+                  }
+                  @keyframes flipInX {
+                    from {
+                      perspective: 2000px;
+                      rotate: x var(--ani-flip-rotate);
+                      opacity: 0;
+                    }
+                    to {
+                      rotate: x 0;
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes flipOutX {
+                    from {
+                      rotate: x 0;
+                      opacity: 1;
+                    }
+                    to {
+                      perspective: 2000px;
+                      rotate: x var(--ani-flip-rotate);
+                      opacity: 0;
+                    }
+                  }
+                  [data-ani-children][data-ani="flip-y"] > .in,
+                  [data-ani="flip-y"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation-name: flipInY;
+                  }
+                  [data-ani-children][data-ani="flip-x"] > .in,
+                  [data-ani="flip-x"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation-name: flipInX;
+                  }
+                  [data-ani-children][data-ani="flip-y"] > .out,
+                  [data-ani="flip-y"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation-name: flipOutY;
+                  }
+                  [data-ani-children][data-ani="flip-x"] > .out,
+                  [data-ani="flip-x"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation-name: flipOutX;
+                  }
+                  @keyframes expandDown {
+                    from {
+                      height: 0;
+                    }
+                    to {
+                      height: var(--newHeight);
+                    }
+                  }
+                  @keyframes expandUp {
+                    from {
+                      height: var(--newHeight);
+                    }
+                    to {
+                      height: 0;
+                    }
+                  }
+                  [data-ani="expand"],
+                  [data-ani="expand"][data-state="open"],
+                  [data-ani="expand"].in {
+                    --newHeight: var(
+                      --custom-height,
+                      var(
+                        --radix-accordion-content-height,
+                        var(--radix-collapsible-content-height, 100%)
+                      )
+                    );
+                    overflow: hidden;
+                    opacity: 1;
+                  }
+                  [data-ani-children][data-ani="expand"] > .in,
+                  [data-ani="expand"]:where(
+                      .in:not([data-state]),
+                      [data-state$="open"],
+                      [data-state="active"]
+                    ) {
+                    animation: expandDown var(--ani-duration) var(--ani-easing);
+                  }
+                  [data-ani-children][data-ani="expand"] > .out,
+                  [data-ani="expand"]:where(
+                      .out:not([data-state]),
+                      [data-state="closed"],
+                      [data-state="inactive"]
+                    ) {
+                    animation: expandUp var(--ani-duration) var(--ani-easing);
+                  }
+                  @media (prefers-reduced-motion: reduce) {
+                    [data-ani]:not([data-ani-children]),
+                    [data-ani-progress]:not([data-ani-children]),
+                    [data-ani-children] > * {
+                      opacity: 1;
+                      transform: none;
+                      animation: none;
+                      rotate: none;
+                      scale: none;
+                      translate: none;
+                    }
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: contents">
+      <div style="display: contents">
+        <div class="w-html-embed">
+          <style>
+            .cursor-zone {
+              position: relative;
+            }
+
+            .svg-cursor {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 40px;
+              height: 40px;
+              transform: translate(-50%, -50%);
+              pointer-events: none;
+              z-index: 999999;
+              opacity: 0;
+              will-change: transform;
+              transition: opacity 0.2s ease;
+            }
+
+            .svg-cursor svg {
+              width: 100%;
+              height: 100%;
+              stroke: white;
+              filter: drop-shadow(0 0 6px white);
+              animation: glow 1.5s ease-in-out infinite;
+            }
+
+            @keyframes glow {
+              0%,
+              100% {
+                filter: drop-shadow(0 0 6px white);
+              }
+              50% {
+                filter: drop-shadow(0 0 12px white);
+              }
+            }
+          </style>
+
+          <div class="cursor-zone">
+            <!-- conteúdo da zona -->
+          </div>
+
+          <div id="svgCursor" class="svg-cursor" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M12 6V14"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M15 11L12 14L9 11"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+
+          <script>
+            (function () {
+              const cursorEl = document.getElementById("svgCursor");
+              const zone = document.querySelector(".cursor-zone");
+
+              if (window.matchMedia("(pointer: coarse)").matches) {
+                cursorEl.style.display = "none";
+                return;
+              }
+
+              let targetX = 0,
+                targetY = 0;
+              let currX = 0,
+                currY = 0;
+              let rafId = null;
+
+              function onMove(e) {
+                targetX = e.clientX;
+                targetY = e.clientY;
+                cursorEl.style.opacity = "0.6";
+                startLoop();
+              }
+
+              function startLoop() {
+                if (rafId) return;
+                rafId = requestAnimationFrame(tick);
+              }
+
+              function tick() {
+                const ease = 0.2;
+                currX += (targetX - currX) * ease;
+                currY += (targetY - currY) * ease;
+                cursorEl.style.transform = `translate(${currX}px, ${currY}px) translate(-50%, -50%)`;
+
+                if (
+                  Math.abs(currX - targetX) > 0.1 ||
+                  Math.abs(currY - targetY) > 0.1
+                ) {
+                  rafId = requestAnimationFrame(tick);
+                } else {
+                  rafId = null;
+                }
+              }
+
+              function onLeave() {
+                cursorEl.style.opacity = "0";
+              }
+
+              // Evento de clique para scroll
+              zone.addEventListener("click", () => {
+                window.scrollTo({
+                  top: window.innerHeight, // 100vh
+                  behavior: "smooth",
+                });
+              });
+
+              zone.addEventListener("mousemove", onMove);
+              zone.addEventListener("pointermove", onMove);
+              zone.addEventListener("mouseleave", onLeave);
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+    <script id="vike_pageContext" type="application/json">
+      {
+        "_urlRewrite": null,
+        "pageId": "/pages/eq",
+        "routeParams": {},
+        "data": {
+          "url": "https://url/eq",
+          "system": { "params": {}, "search": {}, "origin": "https://url" },
+          "resources": {},
+          "pageMeta": {
+            "title": "Equipa",
+            "description": "Os membros da direção do núcleo",
+            "excludePageFromSearch": true,
+            "language": "pt-pt",
+            "socialImageAssetName": "!undefined",
+            "socialImageUrl": "",
+            "status": "!undefined",
+            "redirect": "",
+            "custom": []
+          }
+        }
+      }
+    </script>
+    <script id="vike_globalContext" type="application/json">
+      {}
+    </script>
+    <script
+      src="/assets/entries/entry-server-routing.DhSXm3kS.js"
+      type="module"
+      async
+    ></script>
+    <link
+      rel="modulepreload"
+      href="/assets/entries/pages_eq.xtmA_z9N.js"
+      as="script"
+      type="text/javascript"
+    /><link
+      rel="modulepreload"
+      href="/assets/chunks/chunk-C7Vohd8u.js"
+      as="script"
+      type="text/javascript"
+    />
+  </body>
+</html>
