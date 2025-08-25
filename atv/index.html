@@ -2,13 +2,13 @@
 <html
   lang="pt-pt"
   data-ws-project="94038a03-ac54-4182-9032-d1978f54377b"
-  data-ws-last-published="2025-08-19T11:50:09.132Z"
+  data-ws-last-published="2025-08-25T20:32:12.950Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.CroCJFHc.css"
+      href="/assets/static/app_generated_index-6937cd5a.B_gfR3Iq.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -508,7 +508,7 @@
       <div id="SH" class="w-box w-header-content-2">
         <h1 class="w-heading w-heading-54">ShareToy</h1>
         <div class="w-element w-element-35">Voluntariado</div>
-        <p class="w-paragraph w-paragraph-21">
+        <p class="w-paragraph w-paragraph-20">
           O <b class="w-element">ShareToy </b>é uma iniciativa que consiste na
           recolha de brinquedos, reparação e redistribuição, com o propósito de
           proporcionar momentos de alegria e conforto a crianças em situação de
@@ -712,7 +712,7 @@
     <section class="w-box w-section-articles-1">
       <div class="w-box w-container-16">
         <div class="w-box w-header-56">
-          <p class="w-paragraph w-paragraph-23">
+          <p class="w-paragraph w-paragraph-22">
             Mais algumas atividades do núcleo:
           </p>
         </div>
@@ -760,8 +760,7 @@
                     <h5>Descobre Mais!</h5>
                   </div>
 
-                  <!-- Pop-up com botão turbinado -->
-                  <!-- Pop-up com botão turbinado -->
+                  <!-- Pop-up -->
                   <div id="popupV" class="popup">
                     <div class="popup-content">
                       <button class="close-btn" onclick="closePopup('popupV')">
@@ -772,32 +771,14 @@
                         Voluntariado Florinhas do Vouga
                       </h2>
 
-                      <p
-                        style="
-                          text-align: justify;
-                          line-height: 1.6;
-                          font-size: 15px;
-                          color: #333;
-                          width: 80%;
-                          margin: 0 auto;
-                        "
-                      >
+                      <p class="popup-text">
                         O espírito de voluntariado continua a mover o Núcleo. A
                         Instituição Particular de Solidariedade Social
                         <strong>Florinhas do Vouga</strong> tinha vários
                         portáteis a precisar de manutenção.
                       </p>
 
-                      <p
-                        style="
-                          text-align: justify;
-                          line-height: 1.6;
-                          font-size: 15px;
-                          color: #333;
-                          width: 80%;
-                          margin: 0 auto;
-                        "
-                      >
+                      <p class="popup-text">
                         Mais do que manutenção, esta ação mostra como cada
                         pequena contribuição pode fazer a diferença no dia a dia
                         de quem mais precisa. Muitas vezes, o voluntariado não
@@ -879,10 +860,7 @@
                       display: none;
                       position: fixed;
                       z-index: 9999;
-                      left: 0;
-                      top: 0;
-                      width: 100%;
-                      height: 100%;
+                      inset: 0;
                       background-color: rgba(0, 0, 0, 0.6);
                       justify-content: center;
                       align-items: center;
@@ -893,16 +871,14 @@
                       background: #fff;
                       padding: 20px 30px;
                       border-radius: 16px;
-                      /*max-width: 500px;*/
                       max-height: 90vh;
                       width: 80vw;
                       text-align: center;
                       position: relative;
                       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                      align-items: center;
                     }
 
-                    /* Botão de fechar turbinado */
+                    /* Botão de fechar */
                     .close-btn {
                       position: absolute;
                       top: -15px;
@@ -910,7 +886,7 @@
                       width: 40px;
                       height: 40px;
                       background: #ff4b5c;
-                      color: white;
+                      color: #fff;
                       border-radius: 50%;
                       font-size: 22px;
                       font-weight: bold;
@@ -924,13 +900,12 @@
                         transform 0.2s,
                         background 0.3s;
                     }
-
                     .close-btn:hover {
                       background: #e63946;
                       transform: rotate(90deg) scale(1.1);
                     }
 
-                    /* Estilo dos artigos/cartões */
+                    /* Cartão */
                     .artigo {
                       display: inline-block;
                       width: 200px;
@@ -941,45 +916,54 @@
                       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                       transition: transform 0.2s;
                     }
-
                     .artigo:hover {
                       transform: scale(1.05);
                     }
-
                     .artigo h5 {
                       margin: 0;
                       padding: 5px;
                       text-align: center;
                       background: #f5f5f5;
                     }
+
+                    /* Texto do popup (sem inline) */
+                    .popup-text {
+                      text-align: justify;
+                      line-height: 1.25;
+                      font-size: 15px;
+                      color: #333;
+                      width: 80%;
+                      margin: 0 auto;
+                      margin-bottom: 24px; /* sem espaço entre 24 e px */
+                    }
+
+                    /* Responsividade */
+                    @media (max-width: 479px) {
+                      .popup-content {
+                        width: 65vw !important;
+                      }
+                      .popup-text {
+                        width: auto !important;
+                      }
+                      .popup-content img {
+                        max-width: 100%;
+                        height: auto;
+                      }
+                    }
                   </style>
 
-                  <!-- Artigo de exemplo -->
                   <div class="artigo" onclick="openPopup('popupCA')">
                     <h5>Descobre Mais!</h5>
                   </div>
 
-                  <!-- Pop-up com botão turbinado -->
-                  <!-- Pop-up com botão turbinado -->
                   <div id="popupCA" class="popup">
                     <div class="popup-content">
                       <button class="close-btn" onclick="closePopup('popupCA')">
                         ×
                       </button>
-
                       <h2 style="margin-bottom: 12px">Competição de Arduino</h2>
 
-                      <p
-                        style="
-                          text-align: justify;
-                          line-height: 1.25;
-                          font-size: 15px;
-                          color: #333;
-                          width: 80%;
-                          margin-bottom: 24 px;
-                          margin: 0 auto;
-                        "
-                      >
+                      <p class="popup-text">
                         A EPS Young Minds e o NeRD realizaram a Competição de
                         Arduino, que decorreu nos dias
                         <strong>7, 14 e 28 de maio</strong>! <br /><br />
@@ -994,7 +978,7 @@
                         resolução de problemas, disputando o título de melhor
                         projeto.
                       </p>
-                      <!-- Imagem destacada -->
+
                       <img
                         src="/assets/IMG-20250602-WA0012_pniii-LoQFZbY-ZnB0hm8.jpg?width=3840&amp;quality=80&amp;format=auto"
                         alt="Competição de Arduino"
@@ -1015,7 +999,6 @@
                     function openPopup(id) {
                       document.getElementById(id).style.display = "flex";
                     }
-
                     function closePopup(id) {
                       document.getElementById(id).style.display = "none";
                     }
@@ -1581,18 +1564,18 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.DhSXm3kS.js"
+      src="/assets/entries/entry-server-routing.CB3sRhwQ.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_atv.CdM2M8dO.js"
+      href="/assets/entries/pages_atv.BkLsqBv0.js"
       as="script"
       type="text/javascript"
     /><link
       rel="modulepreload"
-      href="/assets/chunks/chunk-C7Vohd8u.js"
+      href="/assets/chunks/chunk-Bo6vq9yK.js"
       as="script"
       type="text/javascript"
     />
