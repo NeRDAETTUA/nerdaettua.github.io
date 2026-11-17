@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt-pt" data-ws-project="94038a03-ac54-4182-9032-d1978f54377b" data-ws-version="8986" data-ws-last-published="2026-11-13T22:45:58.279Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.CLhzi4_W.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 16w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 32w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 48w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 64w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 96w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 128w" imageSizes="100vw"/><link rel="icon" href="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png"/><meta property="og:url" content="https://url/atv"/><meta property="og:title" content="Sharetoy"/><meta property="og:type" content="website"/><meta property="og:site_name" content="NeRD"/><meta name="description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
+<!DOCTYPE html><html lang="pt-pt" data-ws-project="94038a03-ac54-4182-9032-d1978f54377b" data-ws-version="8988" data-ws-last-published="2026-11-17T00:55:58.094Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.CLhzi4_W.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 16w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 32w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 48w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 64w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 96w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 128w" imageSizes="100vw"/><link rel="icon" href="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png"/><meta property="og:url" content="https://url/atv"/><meta property="og:title" content="Sharetoy"/><meta property="og:type" content="website"/><meta property="og:site_name" content="NeRD"/><meta name="description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
 "/><meta property="og:description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
 "/><title>Sharetoy</title><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -87,21 +87,6 @@
   .sharetoy-content > *:not(.deco) {
     position: relative;
     z-index: 1;
-  }
-
-  /* Faixa de logos no topo (ocupa a largura toda do cartão) */
-  .sharetoy-content .top-strip {
-    margin: calc(-1 * clamp(1.25rem, 4vw, 4rem)) calc(-1 * clamp(1.25rem, 4vw, 4rem)) clamp(2rem, 5vw, 3.5rem);
-    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .sharetoy-content .top-strip img {
-    width: 100%;
-    max-height: 110px;
-    margin-inline: auto;
-    object-fit: contain;
   }
 
   /* Elementos decorativos */
@@ -475,6 +460,42 @@
     font-size: 0.88rem;
   }
 
+  /* Colaboradores */
+  .sharetoy-content .collab-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .sharetoy-content .collab-item {
+    display: flex;
+    width: clamp(96px, 16vw, 130px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--ink) !important;
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  .sharetoy-content .collab-avatar {
+    width: clamp(84px, 13vw, 110px);
+    aspect-ratio: 1;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--line), 0 14px 28px -16px rgba(0, 0, 0, 0.35);
+    object-fit: cover;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+
   /* Parceiros */
   .sharetoy-content .partners-wrap {
     padding: clamp(1rem, 3vw, 2rem);
@@ -621,6 +642,168 @@
     transition: color 220ms ease;
   }
 
+  /* Skeleton screen (efeito shimmer) — só aparece quando o JavaScript o ativa */
+  .sharetoy-content > div.st-skeleton {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: none;
+    overflow: hidden;
+    padding: inherit;
+    border-radius: inherit;
+    background: var(--cream);
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 450ms ease;
+  }
+
+  .sharetoy-content.skeleton-on > div.st-skeleton {
+    display: block;
+  }
+
+  .sharetoy-content.skeleton-leaving > div.st-skeleton {
+    opacity: 0;
+  }
+
+  .sharetoy-content .st-bone {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ebe4d8;
+  }
+
+  .sharetoy-content .st-bone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    animation: sharetoy-shimmer 1.4s ease-in-out infinite;
+  }
+
+  .sharetoy-content .st-circle {
+    border-radius: 50%;
+  }
+
+  .sharetoy-content .st-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+    margin-bottom: clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .sharetoy-content .st-hero-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: clamp(18px, 2.4vw, 28px);
+  }
+
+  .sharetoy-content .st-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .sharetoy-content .st-h1 {
+    width: 85%;
+    height: clamp(2.2rem, 6vw, 3.4rem);
+  }
+
+  .sharetoy-content .st-h1.short {
+    width: 55%;
+    margin-bottom: 0.6rem;
+  }
+
+  .sharetoy-content .st-line {
+    width: 100%;
+    max-width: 500px;
+    height: 14px;
+    border-radius: 8px;
+  }
+
+  .sharetoy-content .st-w80 { width: 80%; }
+  .sharetoy-content .st-w60 { width: 60%; }
+
+  .sharetoy-content .st-pill {
+    width: 200px;
+    max-width: 100%;
+    height: 58px;
+    margin-top: 0.7rem;
+    border-radius: 999px;
+  }
+
+  .sharetoy-content .st-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sharetoy-content .st-center .st-line {
+    max-width: 700px;
+  }
+
+  .sharetoy-content .st-title {
+    width: min(260px, 70%);
+    height: 30px;
+    margin-bottom: 0.7rem;
+  }
+
+  .sharetoy-content .st-steps {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sharetoy-content .st-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--card);
+  }
+
+  .sharetoy-content .st-num {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.4rem;
+  }
+
+  .sharetoy-content .st-row {
+    height: 68px;
+    border-radius: 16px;
+  }
+
+  .sharetoy-content .st-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sharetoy-content .st-collab {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+  }
+
+  .sharetoy-content .st-avatar {
+    width: clamp(84px, 13vw, 110px);
+    aspect-ratio: 1;
+  }
+
+  @keyframes sharetoy-shimmer {
+    100% { transform: translateX(100%); }
+  }
+
   /* Animações de entrada — ativadas por JavaScript quando disponível */
   .sharetoy-content.motion-ready [data-reveal] {
     opacity: 0;
@@ -665,12 +848,14 @@
 
   /* Tablet e desktop */
   @media (min-width: 768px) {
-    .sharetoy-content .steps-grid {
+    .sharetoy-content .steps-grid,
+    .sharetoy-content .st-steps {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25rem;
     }
 
-    .sharetoy-content .info-card .data-list {
+    .sharetoy-content .info-card .data-list,
+    .sharetoy-content .st-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
@@ -682,7 +867,8 @@
   }
 
   @media (min-width: 992px) {
-    .sharetoy-content .hero-split {
+    .sharetoy-content .hero-split,
+    .sharetoy-content .st-hero {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: clamp(3rem, 5vw, 5rem);
     }
@@ -692,11 +878,16 @@
       text-align: right;
     }
 
+    .sharetoy-content .st-text {
+      align-items: flex-end;
+    }
+
     .sharetoy-content .scroll-prompt {
       align-self: flex-end;
     }
 
-    .sharetoy-content .info-card:first-child .data-list {
+    .sharetoy-content .info-card:first-child .data-list,
+    .sharetoy-content .st-list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
@@ -708,16 +899,18 @@
       border-radius: 18px;
     }
 
-    .sharetoy-content .top-strip {
-      margin: -1.1rem -1.1rem 1.75rem;
-    }
-
-    .sharetoy-content .hero-split {
+    .sharetoy-content .hero-split,
+    .sharetoy-content .st-hero {
       gap: 1.4rem;
       margin-bottom: 3.4rem;
     }
 
     .sharetoy-content .image-column {
+      aspect-ratio: 5 / 4;
+      border-radius: 18px;
+    }
+
+    .sharetoy-content .st-hero-img {
       aspect-ratio: 5 / 4;
       border-radius: 18px;
     }
@@ -734,6 +927,10 @@
 
     .sharetoy-content .hero-cta,
     .sharetoy-content .closing .cta-button {
+      width: 100%;
+    }
+
+    .sharetoy-content .st-pill {
       width: 100%;
     }
 
@@ -792,6 +989,11 @@
       color: var(--green);
     }
 
+    .sharetoy-content .collab-item:hover .collab-avatar {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 0 0 3px var(--green), 0 18px 30px -16px rgba(0, 0, 0, 0.35);
+    }
+
     .sharetoy-content .cta-button:hover {
       transform: translateY(-3px);
       background: var(--green);
@@ -843,9 +1045,68 @@
   <span class="deco deco-3" aria-hidden="true"></span>
   <span class="deco deco-4" aria-hidden="true"></span>
 
-  <!-- Faixa de logos dos organizadores -->
-  <div class="top-strip">
-    <img src="Faixacomlogosdosorganizadores.png" alt="Logos dos organizadores do ShareToy" decoding="async" fetchpriority="high">
+  <!-- Skeleton screen: estrutura cinzenta com shimmer enquanto o conteúdo carrega -->
+  <div class="st-skeleton" aria-hidden="true">
+    <div class="st-hero">
+      <div class="st-bone st-hero-img"></div>
+      <div class="st-text">
+        <div class="st-bone st-h1"></div>
+        <div class="st-bone st-h1 short"></div>
+        <div class="st-bone st-line"></div>
+        <div class="st-bone st-line st-w80"></div>
+        <div class="st-bone st-line st-w60"></div>
+        <div class="st-bone st-pill"></div>
+      </div>
+    </div>
+
+    <div class="st-center">
+      <div class="st-bone st-title"></div>
+      <div class="st-bone st-line"></div>
+      <div class="st-bone st-line st-w80"></div>
+    </div>
+
+    <div class="st-steps">
+      <div class="st-card">
+        <div class="st-bone st-circle st-num"></div>
+        <div class="st-bone st-line"></div>
+        <div class="st-bone st-line st-w60"></div>
+      </div>
+      <div class="st-card">
+        <div class="st-bone st-circle st-num"></div>
+        <div class="st-bone st-line"></div>
+        <div class="st-bone st-line st-w60"></div>
+      </div>
+      <div class="st-card">
+        <div class="st-bone st-circle st-num"></div>
+        <div class="st-bone st-line"></div>
+        <div class="st-bone st-line st-w60"></div>
+      </div>
+    </div>
+
+    <div class="st-center">
+      <div class="st-bone st-title"></div>
+    </div>
+
+    <div class="st-list">
+      <div class="st-bone st-row"></div>
+      <div class="st-bone st-row"></div>
+      <div class="st-bone st-row"></div>
+      <div class="st-bone st-row"></div>
+      <div class="st-bone st-row"></div>
+      <div class="st-bone st-row"></div>
+    </div>
+
+    <div class="st-center">
+      <div class="st-bone st-title"></div>
+    </div>
+
+    <div class="st-collab">
+      <div class="st-bone st-circle st-avatar"></div>
+      <div class="st-bone st-circle st-avatar"></div>
+      <div class="st-bone st-circle st-avatar"></div>
+      <div class="st-bone st-circle st-avatar"></div>
+      <div class="st-bone st-circle st-avatar"></div>
+    </div>
   </div>
 
   <!-- Hero -->
@@ -952,6 +1213,18 @@
     </div>
   </div>
 
+  <!-- Colaboradores -->
+  <div class="section-block" data-reveal>
+    <h2 class="section-title">Colaboradores</h2>
+    <ul class="collab-list">
+      <li><a class="collab-item" href="https://www.instagram.com/nerd.aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="nerd.jpeg" alt="NeRD" loading="lazy" decoding="async"><span>NeRD</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="aettua.jpeg" alt="AETTUA" loading="lazy" decoding="async"><span>AETTUA</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/esnaveiro/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="esn.jpeg" alt="ESN Aveiro" loading="lazy" decoding="async"><span>ESN Aveiro</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/ieeeuasbpt/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="ieee.jpeg" alt="IEEE UA SB" loading="lazy" decoding="async"><span>IEEE UA SB</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/embs.ua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="embs.jpeg" alt="EMBS UA" loading="lazy" decoding="async"><span>EMBS UA</span></a></li>
+    </ul>
+  </div>
+
   <!-- Parceiros -->
   <div class="section-block" data-reveal>
     <h2 class="section-title green">Parceiros</h2>
@@ -1001,7 +1274,7 @@
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* Sem suporte para IntersectionObserver ou com movimento reduzido,
-       o conteúdo fica imediatamente visível. */
+       o conteúdo fica imediatamente visível (sem skeleton nem animações). */
     if (reduceMotion || !('IntersectionObserver' in window)) {
       revealItems.forEach((item) => item.classList.add('is-visible'));
       return;
@@ -1020,10 +1293,37 @@
       threshold: 0.08
     });
 
-    /* A classe só é adicionada quando o observador já está preparado,
-       evitando esconder conteúdo caso o JavaScript não esteja disponível. */
+    /* As classes só são adicionadas quando o JavaScript está ativo,
+       evitando esconder conteúdo caso ele não esteja disponível. */
     section.classList.add('motion-ready');
-    revealItems.forEach((item) => observer.observe(item));
+    const startReveal = () => revealItems.forEach((item) => observer.observe(item));
+
+    const skeleton = section.querySelector('.st-skeleton');
+    if (!skeleton) {
+      startReveal();
+      return;
+    }
+
+    /* Skeleton: mostra-se até a imagem principal carregar (mínimo 700 ms, máximo 5 s). */
+    section.classList.add('skeleton-on');
+
+    const heroImg = section.querySelector('.hero-img');
+    const imageReady = new Promise((resolve) => {
+      if (!heroImg || heroImg.complete) return resolve();
+      heroImg.addEventListener('load', resolve, { once: true });
+      heroImg.addEventListener('error', resolve, { once: true });
+    });
+    const minDelay = new Promise((resolve) => setTimeout(resolve, 700));
+    const maxDelay = new Promise((resolve) => setTimeout(resolve, 5000));
+
+    Promise.race([Promise.all([imageReady, minDelay]), maxDelay]).then(() => {
+      section.classList.add('skeleton-leaving');
+      startReveal();
+      setTimeout(() => {
+        section.classList.remove('skeleton-on', 'skeleton-leaving');
+        skeleton.remove();
+      }, 500);
+    });
   })();
 </script></div><div data-ani-progress="slide-up" ata-ani-children="true" style="display:contents"><div style="display:contents"><footer class="w-box c1xvh3wi .protecao"><div class="w-box c1y5gtuy ctwedid c4zv7o8 c1yxbcu3 ca0xin3 c1rlgl31 c15wov26 c9vbpot cj6cf3e c10c0lh2"><hr class="w-separator cls0uqx ca0xin3 c1e9izlp cc1w4m0"/><div class="w-box c15wov26 c45gf4w c1n863ed c8yq6mq ccanaxu cuwsqp1"><div class="w-box c15wov26 c45gf4w c1b8w41a co0w7fv"><a href="https://www.instagram.com/nerd.aettua" class="w-link ccbw1jm c1i6u13o c1tdtvjs c14hij5v c1u4qls7 c1mucm95 c17skwfs c1ov2tmq ccanaxu cciowao c1b8w41a co0w7fv cs9dmk2 c1f1r4bb cyp6dig c1ei055y cg9t561 c1dq3r5 cq1libe c1ahkfac cnv3kpj c1tv1qvx c7oeyb0 cp8q3ji c1pnksm3 crbb2yz c189r9yc"><div class="w-html-embed c1i6u13o ct6xi25 c1v15jmv"><svg width="100%" height="100%" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0784 4.08455C16.3013 4.6733 16.4177 5.29782 16.4268 5.92733C16.4732 6.71947 16.4734 6.97854 16.475 8.98365L16.4751 9.01165C16.4751 11.0432 16.4643 11.2968 16.4285 12.0968C16.416 12.7197 16.2988 13.3334 16.0801 13.9155C15.6901 14.92 14.8959 15.715 13.8905 16.105C13.3084 16.3237 12.6939 16.441 12.0727 16.4534C11.2786 16.5 11.0183 16.5 8.98766 16.5H8.98754C6.95682 16.5 6.70319 16.4892 5.90238 16.4534C5.27869 16.4335 4.66416 16.3054 4.08538 16.0792C3.07917 15.6901 2.28501 14.8951 1.895 13.8905C1.67629 13.3076 1.55904 12.6939 1.54657 12.0719C1.5 11.2769 1.5 11.0174 1.5 8.9867C1.5 6.95599 1.51081 6.70236 1.54657 5.90155C1.55821 5.28036 1.67629 4.66582 1.895 4.08455C2.28418 3.07917 3.07917 2.28418 4.08455 1.895C4.66582 1.67629 5.28036 1.55904 5.90155 1.54574C6.6957 1.5 6.95599 1.5 8.9867 1.5C11.0174 1.5 11.2711 1.50998 12.071 1.54574C12.693 1.55904 13.3076 1.67629 13.8889 1.895C14.8942 2.28418 15.6884 3.07917 16.0784 4.08455ZM5.13733 8.98255C5.13733 11.1064 6.85786 12.8269 8.98171 12.8269C11.1039 12.8269 12.8261 11.1064 12.8261 8.98255C12.8261 6.85869 11.1039 5.13816 8.98171 5.13816C6.85786 5.13816 5.13733 6.85869 5.13733 8.98255ZM12.0827 4.99596C12.0827 5.49158 12.4827 5.8924 12.9791 5.8924C13.4739 5.8924 13.8747 5.49158 13.8747 4.99596C13.8747 4.50034 13.4739 4.09951 12.9791 4.09951C12.4827 4.09951 12.0827 4.50034 12.0827 4.99596ZM11.4789 8.98251C11.4789 10.3617 10.3608 11.4797 8.98167 11.4797C7.60248 11.4797 6.48444 10.3617 6.48444 8.98251C6.48444 7.60332 7.60248 6.48528 8.98167 6.48528C10.3608 6.48528 11.4789 7.60332 11.4789 8.98251Z" fill="currentColor"></path>
@@ -1068,4 +1368,4 @@ to{height:var(--newHeight)}}
 @keyframes expandUp{from{height:var(--newHeight)}
 to{height:0}}[data-ani='expand'],[data-ani='expand'][data-state='open'],[data-ani='expand'].in{--newHeight:var(--custom-height,var(--radix-accordion-content-height,var(--radix-collapsible-content-height,100%)));overflow:hidden;opacity:1}[data-ani-children][data-ani='expand']>.in,[data-ani='expand']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation:expandDown var(--ani-duration)var(--ani-easing)}[data-ani-children][data-ani='expand']>.out,[data-ani='expand']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation:expandUp var(--ani-duration)var(--ani-easing)}
 @media(prefers-reduced-motion:reduce){[data-ani]:not([data-ani-children]),[data-ani-progress]:not([data-ani-children]),[data-ani-children]>*{opacity:1;transform:none;animation:none;rotate:none;scale:none;translate:none}}
-</style></div></div></div></div></div><script id="vike_pageContext" type="application/json">{"pageId":"\/pages\/atv","routeParams":{},"data":{"url":"https:\/\/url\/atv","system":{"params":{},"search":{},"origin":"https:\/\/url","pathname":"\/atv"},"resources":{},"pageMeta":{"title":"Sharetoy","description":"Evento de solidariedade dinamizado na Universidade de Aveiro.\n","excludePageFromSearch":false,"language":"pt-pt","socialImageAssetName":"!undefined","socialImageUrl":"!undefined","status":"!undefined","redirect":"","content":"!undefined","custom":[]}}}</script><script id="vike_globalContext" type="application/json">{}</script><script src="/assets/entries/entry-server-routing.ZIKPxdiV.js" type="module" async></script><link rel="modulepreload" href="/assets/entries/pages_atv.DQkboaBR.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-BPifvFCu.js" as="script" type="text/javascript"></body></html>
+</style></div></div></div></div></div><script id="vike_pageContext" type="application/json">{"pageId":"\/pages\/atv","routeParams":{},"data":{"url":"https:\/\/url\/atv","system":{"params":{},"search":{},"origin":"https:\/\/url","pathname":"\/atv"},"resources":{},"pageMeta":{"title":"Sharetoy","description":"Evento de solidariedade dinamizado na Universidade de Aveiro.\n","excludePageFromSearch":false,"language":"pt-pt","socialImageAssetName":"!undefined","socialImageUrl":"!undefined","status":"!undefined","redirect":"","content":"!undefined","custom":[]}}}</script><script id="vike_globalContext" type="application/json">{}</script><script src="/assets/entries/entry-server-routing.DezohE2w.js" type="module" async></script><link rel="modulepreload" href="/assets/entries/pages_atv.FqFd9mm1.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-BPifvFCu.js" as="script" type="text/javascript"></body></html>
