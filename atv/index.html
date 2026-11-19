@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt-pt" data-ws-project="94038a03-ac54-4182-9032-d1978f54377b" data-ws-version="8988" data-ws-last-published="2026-11-17T00:55:58.094Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.CLhzi4_W.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 16w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 32w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 48w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 64w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 96w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 128w" imageSizes="100vw"/><link rel="icon" href="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png"/><meta property="og:url" content="https://url/atv"/><meta property="og:title" content="Sharetoy"/><meta property="og:type" content="website"/><meta property="og:site_name" content="NeRD"/><meta name="description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
+<!DOCTYPE html><html lang="pt-pt" data-ws-project="94038a03-ac54-4182-9032-d1978f54377b" data-ws-version="8990" data-ws-last-published="2026-11-19T17:55:55.784Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.CLhzi4_W.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 16w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 32w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 48w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 64w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 96w, /assets/apenas_robo_iC01iNW421QRImmL4SK7d.png 128w" imageSizes="100vw"/><link rel="icon" href="/assets/apenas_robo_iC01iNW421QRImmL4SK7d.png"/><meta property="og:url" content="https://url/atv"/><meta property="og:title" content="Sharetoy"/><meta property="og:type" content="website"/><meta property="og:site_name" content="NeRD"/><meta name="description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
 "/><meta property="og:description" content="Evento de solidariedade dinamizado na Universidade de Aveiro.
 "/><title>Sharetoy</title><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -460,6 +460,44 @@
     font-size: 0.88rem;
   }
 
+  /* Galeria da oficina */
+  .sharetoy-content .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+  }
+
+  .sharetoy-content .gallery-item {
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    border-radius: clamp(14px, 2vw, 20px);
+    background: #f1ebe1;
+    box-shadow: 0 14px 28px -20px rgba(0, 0, 0, 0.35);
+  }
+
+  .sharetoy-content .gallery-item:nth-child(even) {
+    --reveal-delay: 90ms;
+  }
+
+  .sharetoy-content .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 650ms cubic-bezier(.2, .7, .2, 1);
+  }
+
+  .sharetoy-content .gallery-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.75rem;
+  }
+
+  .sharetoy-content .cta-button.gallery-cta::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d6403f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7'/%3E%3Cpath d='M8 7h9v9'/%3E%3C/svg%3E");
+  }
+
   /* Colaboradores */
   .sharetoy-content .collab-list {
     display: flex;
@@ -864,6 +902,10 @@
     .sharetoy-content .info-card:last-child .data-list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+    .sharetoy-content .gallery-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 992px) {
@@ -926,7 +968,8 @@
     }
 
     .sharetoy-content .hero-cta,
-    .sharetoy-content .closing .cta-button {
+    .sharetoy-content .closing .cta-button,
+    .sharetoy-content .gallery-cta {
       width: 100%;
     }
 
@@ -987,6 +1030,10 @@
 
     .sharetoy-content .press-card:hover .press-link {
       color: var(--green);
+    }
+
+    .sharetoy-content .gallery-item:hover img {
+      transform: scale(1.06);
     }
 
     .sharetoy-content .collab-item:hover .collab-avatar {
@@ -1213,15 +1260,35 @@
     </div>
   </div>
 
+  <!-- Galeria da 1.ª oficina -->
+  <div class="section-block" data-reveal>
+    <h2 class="section-title green">1.ª Oficina de Reparação</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item" data-reveal><img src="oficina-01.jpg" alt="Oficina de reparação ShareToy – foto 1" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-02.jpg" alt="Oficina de reparação ShareToy – foto 2" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-03.jpg" alt="Oficina de reparação ShareToy – foto 3" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-04.jpg" alt="Oficina de reparação ShareToy – foto 4" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-05.jpg" alt="Oficina de reparação ShareToy – foto 5" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-06.jpg" alt="Oficina de reparação ShareToy – foto 6" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-07.jpg" alt="Oficina de reparação ShareToy – foto 7" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-08.jpg" alt="Oficina de reparação ShareToy – foto 8" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-09.jpg" alt="Oficina de reparação ShareToy – foto 9" loading="lazy" decoding="async"></figure>
+      <figure class="gallery-item" data-reveal><img src="oficina-10.jpg" alt="Oficina de reparação ShareToy – foto 10" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="gallery-footer">
+      <a href="https://drive.google.com/drive/folders/1QyidgR_Nf_AUGmFc8Tf8ju01YF1Rw6lk?usp=sharing" target="_blank" rel="noopener noreferrer" class="cta-button gallery-cta">Ver todas as fotos</a>
+    </div>
+  </div>
+
   <!-- Colaboradores -->
   <div class="section-block" data-reveal>
     <h2 class="section-title">Colaboradores</h2>
     <ul class="collab-list">
-      <li><a class="collab-item" href="https://www.instagram.com/nerd.aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="nerd.jpeg" alt="NeRD" loading="lazy" decoding="async"><span>NeRD</span></a></li>
-      <li><a class="collab-item" href="https://www.instagram.com/aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="aettua.jpeg" alt="AETTUA" loading="lazy" decoding="async"><span>AETTUA</span></a></li>
-      <li><a class="collab-item" href="https://www.instagram.com/esnaveiro/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="esn.jpeg" alt="ESN Aveiro" loading="lazy" decoding="async"><span>ESN Aveiro</span></a></li>
-      <li><a class="collab-item" href="https://www.instagram.com/ieeeuasbpt/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="ieee.jpeg" alt="IEEE UA SB" loading="lazy" decoding="async"><span>IEEE UA SB</span></a></li>
-      <li><a class="collab-item" href="https://www.instagram.com/embs.ua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="embs.jpeg" alt="EMBS UA" loading="lazy" decoding="async"><span>EMBS UA</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/nerd.aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="nerd.png" alt="NeRD" loading="lazy" decoding="async"><span>NeRD</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/aettua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="aettua.png" alt="AETTUA" loading="lazy" decoding="async"><span>AETTUA</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/esnaveiro/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="esn.png" alt="ESN Aveiro" loading="lazy" decoding="async"><span>ESN Aveiro</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/ieeeuasbpt/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="ieee.png" alt="IEEE UA SB" loading="lazy" decoding="async"><span>IEEE UA SB</span></a></li>
+      <li><a class="collab-item" href="https://www.instagram.com/embs.ua/" target="_blank" rel="noopener noreferrer"><img class="collab-avatar" src="embs.png" alt="EMBS UA" loading="lazy" decoding="async"><span>EMBS UA</span></a></li>
     </ul>
   </div>
 
@@ -1368,4 +1435,4 @@ to{height:var(--newHeight)}}
 @keyframes expandUp{from{height:var(--newHeight)}
 to{height:0}}[data-ani='expand'],[data-ani='expand'][data-state='open'],[data-ani='expand'].in{--newHeight:var(--custom-height,var(--radix-accordion-content-height,var(--radix-collapsible-content-height,100%)));overflow:hidden;opacity:1}[data-ani-children][data-ani='expand']>.in,[data-ani='expand']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation:expandDown var(--ani-duration)var(--ani-easing)}[data-ani-children][data-ani='expand']>.out,[data-ani='expand']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation:expandUp var(--ani-duration)var(--ani-easing)}
 @media(prefers-reduced-motion:reduce){[data-ani]:not([data-ani-children]),[data-ani-progress]:not([data-ani-children]),[data-ani-children]>*{opacity:1;transform:none;animation:none;rotate:none;scale:none;translate:none}}
-</style></div></div></div></div></div><script id="vike_pageContext" type="application/json">{"pageId":"\/pages\/atv","routeParams":{},"data":{"url":"https:\/\/url\/atv","system":{"params":{},"search":{},"origin":"https:\/\/url","pathname":"\/atv"},"resources":{},"pageMeta":{"title":"Sharetoy","description":"Evento de solidariedade dinamizado na Universidade de Aveiro.\n","excludePageFromSearch":false,"language":"pt-pt","socialImageAssetName":"!undefined","socialImageUrl":"!undefined","status":"!undefined","redirect":"","content":"!undefined","custom":[]}}}</script><script id="vike_globalContext" type="application/json">{}</script><script src="/assets/entries/entry-server-routing.DezohE2w.js" type="module" async></script><link rel="modulepreload" href="/assets/entries/pages_atv.FqFd9mm1.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-BPifvFCu.js" as="script" type="text/javascript"></body></html>
+</style></div></div></div></div></div><script id="vike_pageContext" type="application/json">{"pageId":"\/pages\/atv","routeParams":{},"data":{"url":"https:\/\/url\/atv","system":{"params":{},"search":{},"origin":"https:\/\/url","pathname":"\/atv"},"resources":{},"pageMeta":{"title":"Sharetoy","description":"Evento de solidariedade dinamizado na Universidade de Aveiro.\n","excludePageFromSearch":false,"language":"pt-pt","socialImageAssetName":"!undefined","socialImageUrl":"!undefined","status":"!undefined","redirect":"","content":"!undefined","custom":[]}}}</script><script id="vike_globalContext" type="application/json">{}</script><script src="/assets/entries/entry-server-routing.CvuMvYaq.js" type="module" async></script><link rel="modulepreload" href="/assets/entries/pages_atv.CPOSMYWZ.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-DyjTpgVS.js" as="script" type="text/javascript"></body></html>
